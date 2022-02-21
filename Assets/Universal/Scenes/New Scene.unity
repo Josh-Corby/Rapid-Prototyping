@@ -741,7 +741,7 @@ MonoBehaviour:
   player: {fileID: 1594962277}
   moveDistance: 3
   tweenTime: 0.5
-  moveEase: 22
+  moveEase: 0
 --- !u!65 &1594962279
 BoxCollider:
   m_ObjectHideFlags: 0
