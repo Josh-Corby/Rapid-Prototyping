@@ -2,27 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Proto1
 {
-    public float speed;
-    private Rigidbody enemyRb;
-    private GameObject player;
-
-    private void Start()
+    public class Enemy : GameBehaviour
     {
-        enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
-    }
+        public float speed;
+        private Rigidbody enemyRb;
+        private GameObject player;
 
-    private void Update()
-    {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-
-        enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
-
-        if(transform.position.y < -10)
+        private void Start()
         {
-            Destroy(gameObject);
+            enemyRb = GetComponent<Rigidbody>();
+            player = GameObject.Find("Player");
+        }
+
+        private void Update()
+        {
+            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+
+            enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
+
+            if (transform.position.y < -5)
+            {
+                Destroy(gameObject);
+                _GM1.AddScore(10);
+    
+
+        }
         }
     }
 }

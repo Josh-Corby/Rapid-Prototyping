@@ -25,10 +25,6 @@ public class TweenFun : GameBehaviour
             DOEffects();
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
-            {
-            _UI.UpdateScore(10);
-        }
     }
 
 
