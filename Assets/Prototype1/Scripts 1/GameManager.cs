@@ -5,23 +5,37 @@ using UnityEngine;
 namespace Proto1
 {
     public class GameManager : GameBehaviour<GameManager>
-    {
-        public int score;
+    { 
         private void Start()
         {
             Time.timeScale = 1;
-            score = 0;
         }
 
-        public void AddScore(int _score)
+        private void Update()
         {
-            score += _score;
-            _UI.scoreText.text = score.ToString();
+            if (_SM.waveNumber >+20)
+            {
+                _SM.waveNumber = 20;
+                _UI1.ToggleVictoryCanvas();
+                
+
+
+            }
         }
+        //public void AddScore(int _score)
+        //{
+        //    score += _score;
+
+        //}
 
         public void GameOver()
         {
+            Time.timeScale = 0f;
+        }
 
+        public void Quit()
+        {
+            Application.Quit();
         }
     }
 }

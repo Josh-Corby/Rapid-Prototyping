@@ -6,7 +6,7 @@ namespace Proto1
 {
 
 
-    public class SpawnManager : GameBehaviour
+    public class SpawnManager : GameBehaviour<SpawnManager>
     {
         public GameObject powerupPrefab;
         public GameObject enemyPrefab;
@@ -15,6 +15,9 @@ namespace Proto1
         public int enemyCount;
         public int waveNumber = 1;
 
+        public static int EnemiesAlive = 0;
+
+       
         private void Start()
         {
             SpawnEnemyWave(waveNumber);
@@ -57,8 +60,9 @@ namespace Proto1
             {
                 waveNumber++;
                 SpawnEnemyWave(waveNumber);
-                Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+
             }
         }
+
     }
 }

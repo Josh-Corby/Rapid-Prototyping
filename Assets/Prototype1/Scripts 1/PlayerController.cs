@@ -14,6 +14,7 @@ namespace Proto1
         private Rigidbody playerRb;
         public float speed = 5.0f;
 
+
         private float powerupStrength = 15.0f;
         private void Start()
         {
@@ -28,14 +29,23 @@ namespace Proto1
 
             float sideInput = Input.GetAxis("Horizontal");
             playerRb.AddForce(focalPoint.transform.right * speed * sideInput);
-            powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+            powerupIndicator.transform.position = transform.position + new Vector3(0, 0.5f, 0);
 
+           
             if (transform.position.y < -10)
             {
                 _GO.ToggleGameOver();
             }
 
+            if (transform.position.y < 0)
+            {
 
+                if (Input.GetKeyDown("space"))
+                {
+                    Vector3 jump = new Vector3(0.0f, 400f, 0.0f);
+                    GetComponent<Rigidbody>().AddForce(jump);
+                }
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -51,7 +61,7 @@ namespace Proto1
 
         IEnumerator PowerupCountdownRoutine()
         {
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(9);
             hasPowerup = false;
             powerupIndicator.gameObject.SetActive(false);
         }

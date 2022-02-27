@@ -25,7 +25,7 @@ namespace Proto1
             if (transform.position.y < -5)
             {
                 Destroy(gameObject);
-                _GM1.AddScore(10);
+                //_GM1.AddScore(10);
     
 
         }
