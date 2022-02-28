@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Proto1
 {
     public class GameManager : GameBehaviour<GameManager>
-    { 
+    {
+        Timer timer;
+        
         private void Start()
         {
             Time.timeScale = 1;
@@ -22,20 +25,27 @@ namespace Proto1
 
             }
         }
-        //public void AddScore(int _score)
-        //{
-        //    score += _score;
 
-        //}
-
-        public void GameOver()
-        {
-            Time.timeScale = 0f;
-        }
 
         public void Quit()
         {
             Application.Quit();
         }
+
+
+        public void ToggleGameOver()
+        {
+            _UI1.ToggleGameOverCanvas();
+            Time.timeScale = 0f;
+            _S.GameOver();
+
+            
+        }
+        public void Retry()
+        {
+            ToggleGameOver();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 }

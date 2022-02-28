@@ -34,7 +34,7 @@ namespace Proto1
            
             if (transform.position.y < -10)
             {
-                _GO.ToggleGameOver();
+                _GM1.ToggleGameOver();
             }
 
             if (transform.position.y < 0)

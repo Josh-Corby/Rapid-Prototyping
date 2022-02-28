@@ -8,7 +8,11 @@ namespace Proto1
     public class UIManager : GameBehaviour<UIManager>
     {
         public TMP_Text waveCounter;
+        public TMP_Text bestTime;
+        public TMP_Text currentTimeText;
         public GameObject victoryScreen;
+        public GameObject gameOverCanvas;
+
 
         private void Update()
         {
@@ -30,6 +34,34 @@ namespace Proto1
                     Time.timeScale = 1f;
                 }
             }
+        }
+
+        public void ToggleGameOverCanvas()
+        {
+            gameOverCanvas.SetActive(true);
+
+            if (gameOverCanvas.activeSelf)
+            {
+                
+            }
+        }
+
+        public void UpdateCurrentTime(float _time)
+        {
+            currentTimeText.text = _time.ToString("F3");
+        }
+
+        public void UpdateScore(float _bestTime)
+        {
+            bestTime.text = _bestTime.ToString();
+        }
+
+        public void UpdateBestTime( float _time, bool _firstTime = false)
+        {
+            if (_firstTime)
+                bestTime.text = "No Best Time Set Yet";
+            else
+                bestTime.text = "Best Time: " + _time.ToString("F3");
         }
     }
 }
