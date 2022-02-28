@@ -36,7 +36,7 @@ namespace Proto1
         public void Retry()
         {
 
-            SceneManager.LoadScene("MainLevel");
+            SceneManager.LoadScene("Prototype 1");
 
         }
 
