@@ -15,7 +15,7 @@ namespace Proto1
         public float speed = 5.0f;
 
 
-        private float powerupStrength = 15.0f;
+       // private float powerupStrength = 15.0f;
         private void Start()
         {
             playerRb = GetComponent<Rigidbody>();
@@ -32,17 +32,17 @@ namespace Proto1
             powerupIndicator.transform.position = transform.position + new Vector3(0, 0.5f, 0);
 
            
-            if (transform.position.y < -10)
+            if (transform.position.y < -1)
             {
                 _GM1.ToggleGameOver();
             }
 
-            if (transform.position.y < 0)
+            if (transform.position.y < 1)
             {
 
                 if (Input.GetKeyDown("space"))
                 {
-                    Vector3 jump = new Vector3(0.0f, 400f, 0.0f);
+                    Vector3 jump = new Vector3(0.0f, 600f, 0.0f);
                     GetComponent<Rigidbody>().AddForce(jump);
                 }
             }
@@ -61,7 +61,7 @@ namespace Proto1
 
         IEnumerator PowerupCountdownRoutine()
         {
-            yield return new WaitForSeconds(9);
+            yield return new WaitForSeconds(10);
             hasPowerup = false;
             powerupIndicator.gameObject.SetActive(false);
         }
@@ -70,11 +70,12 @@ namespace Proto1
             if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
             {
 
-                Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-                Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
+                Destroy(collision.gameObject);
+                //Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+                //Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
 
-                Debug.Log("Collided with " + collision.gameObject.name + " with powerup set to " + hasPowerup);
-                enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
+                //Debug.Log("Collided with " + collision.gameObject.name + " with powerup set to " + hasPowerup);
+                //enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
             }
         }
     }

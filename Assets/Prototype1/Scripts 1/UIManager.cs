@@ -14,10 +14,6 @@ namespace Proto1
         public GameObject gameOverCanvas;
 
 
-        private void Update()
-        {
-            waveCounter.text = _SM.waveNumber.ToString() +" / 20";
-        }
 
         public void ToggleVictoryCanvas()
         {

@@ -11,58 +11,65 @@ namespace Proto1
         public GameObject powerupPrefab;
         public GameObject enemyPrefab;
         public GameObject enemyPrefab2;
+        public GameObject blockPrefab;
+        public GameObject spawner1;
+
         private float spawnRange = 15;
         public int enemyCount;
-        public int waveNumber = 1;
 
         public static int EnemiesAlive = 0;
 
        
         private void Start()
         {
-            SpawnEnemyWave(waveNumber);
+            //SpawnEnemyWave(waveNumber);
         }
 
-        void SpawnEnemyWave(int enemiesToSpawn)
+        public void SpawnEnemyWave(GameObject _spawner, int enemiesToSpawn)
         {
-            if (waveNumber >= 5)
+            Instantiate(powerupPrefab, GenerateSpawnPosition(_spawner), powerupPrefab.transform.rotation);
+
+            if (enemiesToSpawn >= 5)
             {
-                Instantiate(enemyPrefab2, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+                Instantiate(enemyPrefab2, GenerateSpawnPosition(_spawner), enemyPrefab.transform.rotation);
             }
-            if (waveNumber >= 10)
+            if (enemiesToSpawn >= 10)
             {
-                Instantiate(enemyPrefab2, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+                Instantiate(enemyPrefab2, GenerateSpawnPosition(_spawner), enemyPrefab.transform.rotation);
             }
-            if (waveNumber >= 15)
+            if (enemiesToSpawn >= 15)
             {
-                Instantiate(enemyPrefab2, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+                Instantiate(enemyPrefab2, GenerateSpawnPosition(_spawner), enemyPrefab.transform.rotation);
             }
 
             for (int i = 0; i < enemiesToSpawn; i++)
             {
-                Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
-                Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+                Instantiate(enemyPrefab, GenerateSpawnPosition(_spawner), enemyPrefab.transform.rotation);
+                
 
             }
         }
-        private Vector3 GenerateSpawnPosition()
+        private Vector3 GenerateSpawnPosition(GameObject _spawner)
         {
-            float spawnPosX = Random.Range(-spawnRange, spawnRange);
-            float spawnPosZ = Random.Range(-spawnRange, spawnRange);
+            float spawnPosX = Random.Range(_spawner.transform.position.x - spawnRange, _spawner.transform.position.x + spawnRange);
+            float spawnPosZ = Random.Range(_spawner.transform.position.z - spawnRange, _spawner.transform.position.z + spawnRange);
             Vector3 randomPos = new Vector3(spawnPosX, 0, spawnPosZ);
             return randomPos;
         }
+ 
 
-        private void Update()
-        {
-            enemyCount = FindObjectsOfType<Enemy>().Length;
-            if (enemyCount == 0)
-            {
-                waveNumber++;
-                SpawnEnemyWave(waveNumber);
 
-            }
-        }
+
+        //private void Update()
+        //{
+        //    enemyCount = FindObjectsOfType<Enemy>().Length;
+        //    if (enemyCount == 0)
+        //    {
+        //        waveNumber++;
+        //        //SpawnEnemyWave(waveNumber);
+
+        //    }
+        //}
 
     }
 }

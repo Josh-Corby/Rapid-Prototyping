@@ -16,14 +16,14 @@ namespace Proto1
 
         private void Update()
         {
-            if (_SM.waveNumber >+20)
-            {
-                _SM.waveNumber = 20;
-                _UI1.ToggleVictoryCanvas();
+            //if (_SM.waveNumber >+20)
+            //{
+            //    _SM.waveNumber = 20;
+            //    _UI1.ToggleVictoryCanvas();
                 
 
 
-            }
+            //}
         }
 
 
