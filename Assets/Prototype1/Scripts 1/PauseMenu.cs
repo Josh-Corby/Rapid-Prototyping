@@ -10,6 +10,7 @@ namespace Proto1
     {
         public GameObject ui;
 
+        /*
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -17,7 +18,11 @@ namespace Proto1
                 Toggle();
             }
         }
+        */
 
+        /// <summary>
+        /// function to toggle a ui on or off and change the timescale accordingly
+        /// </summary>
         public void Toggle()
         {
             ui.SetActive(!ui.activeSelf);
@@ -33,6 +38,9 @@ namespace Proto1
             }
         }
 
+        /// <summary>
+        /// reload the scene
+        /// </summary>
         public void Retry()
         {
 
@@ -40,6 +48,9 @@ namespace Proto1
 
         }
 
+        /// <summary>
+        /// change scene to menu scene
+        /// </summary>
         public void Menu()
         {
             SceneManager.LoadScene("MainMenu");

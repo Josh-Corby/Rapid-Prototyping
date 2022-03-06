@@ -6,6 +6,9 @@ namespace Proto1
 {
     public class Scoring : GameBehaviour<Scoring>
     {
+        /// <summary>
+        /// varuables and references
+        /// </summary>
         public float currentTime;
         public float bestTime;
         Timer timer;
@@ -15,6 +18,7 @@ namespace Proto1
             timer = FindObjectOfType<Timer>();
             timer.StartTimer();
 
+            /// if there is a best time already set in playerprefs and sets it to the best time in the script
             if (PlayerPrefs.HasKey("BestTime"))
             {
                 bestTime = (PlayerPrefs.GetFloat("BestTime"));
@@ -27,6 +31,9 @@ namespace Proto1
             }
  
         }
+        /// <summary>
+        /// update the ui timer
+        /// </summary>
         void Update()
         {
             if(timer.IsTiming())
@@ -35,6 +42,10 @@ namespace Proto1
             }    
         }
 
+        /// <summary>
+        /// when the game is over, pause the timer and check if current time beats the best time, if so
+        /// overwrite the best time
+        /// </summary>
         public void GameOver()
         {
             timer.PauseTimer();

@@ -8,15 +8,20 @@ namespace Proto1
 
     public class SpawnManager : GameBehaviour<SpawnManager>
     {
+        /// <summary>
+        /// References
+        /// </summary>
         public GameObject powerupPrefab;
         public GameObject enemyPrefab;
         public GameObject enemyPrefab2;
         public GameObject blockPrefab;
         public GameObject spawner1;
 
+        /// <summary>
+        /// Variables
+        /// </summary>
         private float spawnRange = 15;
         public int enemyCount;
-
         public static int EnemiesAlive = 0;
 
        
@@ -25,8 +30,15 @@ namespace Proto1
             //SpawnEnemyWave(waveNumber);
         }
 
+        /// <summary>
+        /// spawns a given amount enemies at randomly generated positions as well as 2 powerups at random positions.
+        /// depending on how large the wave number is, different types of enemies will spawn at different amounts.
+        /// </summary>
+        /// <param name="_spawner"></param>
+        /// <param name="enemiesToSpawn"></param>
         public void SpawnEnemyWave(GameObject _spawner, int enemiesToSpawn)
         {
+            Instantiate(powerupPrefab, GenerateSpawnPosition(_spawner), powerupPrefab.transform.rotation);
             Instantiate(powerupPrefab, GenerateSpawnPosition(_spawner), powerupPrefab.transform.rotation);
 
             if (enemiesToSpawn >= 5)
@@ -49,6 +61,11 @@ namespace Proto1
 
             }
         }
+        /// <summary>
+        /// Generates a random spawn position for an enemy to spawn in a relative position to the spawner
+        /// </summary>
+        /// <param name="_spawner"></param>
+        /// <returns> The position the enemy will spawn at is returned </returns>
         private Vector3 GenerateSpawnPosition(GameObject _spawner)
         {
             float spawnPosX = Random.Range(_spawner.transform.position.x - spawnRange, _spawner.transform.position.x + spawnRange);
