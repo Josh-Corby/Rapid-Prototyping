@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ground
   - Music
+  - MainTree
   layers:
   - Default
   - TransparentFX

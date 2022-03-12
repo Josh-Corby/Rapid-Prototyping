@@ -27,14 +27,14 @@ namespace Proto2
             }
                 
 
-            //if (Input.GetKey(KeyCode.W))
-            //    PerformRun();
-            //if (Input.GetKey(KeyCode.A))
-            //    PerformRun();
-            //if (Input.GetKey(KeyCode.S))
-            //    PerformRun();
-            //if (Input.GetKey(KeyCode.D))
-            //    PerformRun();   
+            if (Input.GetKey(KeyCode.W))
+                PerformRun();
+            if (Input.GetKey(KeyCode.A))
+                PerformRun();
+            if (Input.GetKey(KeyCode.S))
+                PerformRun();
+            if (Input.GetKey(KeyCode.D))
+                PerformRun();   
         }
 
         IEnumerator AttackZoneToggle()
