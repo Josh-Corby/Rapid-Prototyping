@@ -39,6 +39,7 @@ namespace Proto2
 
         void Die()
         {
+            _PS.seeds += 2;
             Destroy(gameObject);
         }
 

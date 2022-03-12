@@ -9,6 +9,7 @@ namespace Proto2
         public GameObject player;
         private Animator animator;
         public CharacterController controller;
+        public GameObject treePrefab;
 
         public int damage;
         private void Start()
@@ -24,8 +25,7 @@ namespace Proto2
             {
                 StartCoroutine(AttackZoneToggle());
                 PerformAttack();
-            }
-                
+            }           
 
             if (Input.GetKey(KeyCode.W))
                 PerformRun();
@@ -35,6 +35,11 @@ namespace Proto2
                 PerformRun();
             if (Input.GetKey(KeyCode.D))
                 PerformRun();   
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                BuildTree();
+            }
         }
 
         IEnumerator AttackZoneToggle()
@@ -54,6 +59,16 @@ namespace Proto2
             animator.SetTrigger("Run");
         }
 
+        public void BuildTree()
+        {
+            if (_PS.seeds >= 10)
+            {
+                Vector3 pos = transform.position;
+                Instantiate(treePrefab, pos, player.transform.rotation);
+                _PS.seeds -= 10;
+            }    
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Enemy"))
@@ -62,5 +77,19 @@ namespace Proto2
                 Debug.Log("Enemy Hit");
             }
         }
+
+        /*
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("BuildZone"))
+            {
+                Debug.Log("Can Build");
+                if (Input.GetKeyDown(KeyCode.B))
+                {
+                    other.GetComponent<BuildZone>().BuildTree();
+                }
+            }
+        }
+        */
     }
 }
