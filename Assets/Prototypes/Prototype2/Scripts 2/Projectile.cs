@@ -9,6 +9,7 @@ namespace Proto2
         public Transform target;
 
         public float speed;
+        public int damage;
 
         private void Update()
         {
@@ -23,18 +24,25 @@ namespace Proto2
 
             if (dir.magnitude <= distanceThisFame)
             {
-                HitTarget();
+                Damage(target);
                 return;
             }
 
             transform.Translate(dir.normalized * distanceThisFame, Space.World);
         }
 
-        void HitTarget()
+        void Damage (Transform enemy)
         {
-            Destroy(target.gameObject);
-        }
+            Enemy e = enemy.GetComponent<Enemy>();
 
+            if (e != null)
+            {
+                e.TakeDamage(damage);
+                Destroy(gameObject);
+            }
+            
+
+        }
         public void Seek(Transform _target)
         {
             target = _target;

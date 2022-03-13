@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 30
+  damage: 5
 --- !u!1 &2860953916986043974
 GameObject:
   m_ObjectHideFlags: 0

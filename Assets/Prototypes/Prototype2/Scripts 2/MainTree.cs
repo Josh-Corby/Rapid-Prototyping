@@ -6,6 +6,8 @@ namespace Proto2
 {
     public class MainTree : GameBehaviour
     {
+        public HealthBar healthbar;
+
         public int maxHealth;
         public int currentHealth;
 
@@ -13,11 +15,13 @@ namespace Proto2
         private void Start()
         {
             currentHealth = maxHealth;
+            healthbar.SetMaxHealth(maxHealth);
         }
 
         public void TakeDamage(int _damage)
         {
             currentHealth -= _damage;
+            healthbar.SetHealth(currentHealth);
             if (currentHealth <= 0)
                 Die();
         }

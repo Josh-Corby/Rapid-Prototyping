@@ -17,6 +17,7 @@ namespace Proto2
             animator = GetComponent<Animator>();
             controller = GetComponent<CharacterController>();
             controller.detectCollisions = false;
+            _UI2.UpdateSeedAmount(_PS.seeds);
         }
 
         private void Update()
@@ -66,6 +67,7 @@ namespace Proto2
                 Vector3 pos = transform.position;
                 Instantiate(treePrefab, pos, player.transform.rotation);
                 _PS.seeds -= 10;
+                _UI2.UpdateSeedAmount(_PS.seeds);
             }    
         }
 

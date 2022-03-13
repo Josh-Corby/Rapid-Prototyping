@@ -7,7 +7,9 @@ namespace Proto2
     public class Enemy : GameBehaviour
     {
         public GameObject target;
-        public ParticleSystem hitEffect;
+        public GameObject hitEffect;
+
+
         public float speed;
         public float currentHealth;
         public float maxHealth = 10;
@@ -31,7 +33,8 @@ namespace Proto2
 
         public void TakeDamage(int _damage)
         {
-            Instantiate(hitEffect, transform.position, transform.rotation);
+            GameObject effectIns = (GameObject)Instantiate(hitEffect, transform.position, transform.rotation);
+            Destroy(effectIns, 2f);
             currentHealth -= _damage;
             if (currentHealth <= 0)
             Die();
@@ -40,6 +43,7 @@ namespace Proto2
         void Die()
         {
             _PS.seeds += 2;
+            _UI2.UpdateSeedAmount(_PS.seeds);
             Destroy(gameObject);
         }
 

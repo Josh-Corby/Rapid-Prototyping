@@ -4996,10 +4996,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  hitEffect: {fileID: 2356846386370303096, guid: 193c5378e3055c74ba4308fc04441dcf, type: 3}
+  hitEffect: {fileID: 2356846386370303098, guid: 193c5378e3055c74ba4308fc04441dcf, type: 3}
   speed: 2
   currentHealth: 0
-  maxHealth: 10
+  maxHealth: 20
   damage: 10
   partToRotate: {fileID: 5950065841484814599}
   turnspeed: 10

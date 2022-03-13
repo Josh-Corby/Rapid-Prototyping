@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 
 namespace Proto2
 {
     public class UIManager : GameBehaviour<UIManager>
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public TMP_Text seedsText;
 
+        public void UpdateSeedAmount(int _seeds)
+        {
+            seedsText.text = _seeds.ToString();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
