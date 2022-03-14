@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1524501478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524501479}
+  - component: {fileID: 1524501481}
+  - component: {fileID: 1524501480}
+  m_Layer: 0
+  m_Name: AttackZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1524501479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524501478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4933086227095733825}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1524501481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524501478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0bbf9ed22929148b6ed9812b24ffbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1524501480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524501478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0352678, y: 2.1307373, z: 2.063756}
+  m_Center: {x: -0.0004107952, y: 0.565369, z: 2.045197}
 --- !u!1 &516032149073108221
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +691,7 @@ GameObject:
   - component: {fileID: 7662926674039730482}
   - component: {fileID: 4968158892042027153}
   - component: {fileID: 3483452230602021633}
+  - component: {fileID: 499790193}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -654,6 +712,7 @@ Transform:
   m_Children:
   - {fileID: 4330705782680412058}
   - {fileID: 8689786270681920572}
+  - {fileID: 1524501479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -693,7 +752,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: -0.83, y: 1.1, z: 0}
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!114 &4968158892042027153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +782,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5710009511932697851}
-  damage: 0
+  attackzone: {fileID: 1524501481}
+  controller: {fileID: 0}
+  treePrefab: {fileID: 3129942105554827492, guid: 65f20cbe39bd1c24aa76963375b72799, type: 3}
+  damage: 5
+--- !u!114 &499790193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5710009511932697851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689470087dadb12459b736deaf108121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeds: 100
 --- !u!1 &5747057203279390647
 GameObject:
   m_ObjectHideFlags: 0

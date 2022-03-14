@@ -4,16 +4,18 @@ using UnityEngine;
 
 namespace Proto2
 {
-    public class Player : GameBehaviour
+    public class Player : GameBehaviour<Player>
     {
         public GameObject player;
+        public AttackZone attackzone;
         private Animator animator;
-        public CharacterController controller;
+        private CharacterController controller;
         public GameObject treePrefab;
 
         public int damage;
         private void Start()
         {
+
             animator = GetComponent<Animator>();
             controller = GetComponent<CharacterController>();
             controller.detectCollisions = false;
@@ -24,11 +26,11 @@ namespace Proto2
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                StartCoroutine(AttackZoneToggle());
+                attackzone.Attack();
                 PerformAttack();
             }           
-
-            if (Input.GetKey(KeyCode.W))
+            /*
+            if (Input.GetKeyDown(KeyCode.W))
                 PerformRun();
             if (Input.GetKey(KeyCode.A))
                 PerformRun();
@@ -36,28 +38,18 @@ namespace Proto2
                 PerformRun();
             if (Input.GetKey(KeyCode.D))
                 PerformRun();   
-
+                */
             if (Input.GetKeyDown(KeyCode.B))
             {
                 BuildTree();
             }
         }
 
-        IEnumerator AttackZoneToggle()
-        {
-            controller.detectCollisions = true;
-            yield return new WaitForSeconds(0.5f);
-            controller.detectCollisions = false;
-        }
+
 
         public void PerformAttack()
         {
             animator.SetTrigger("Base_Attack");
-        }
-
-        public void PerformRun()
-        {
-            animator.SetTrigger("Run");
         }
 
         public void BuildTree()
@@ -70,16 +62,7 @@ namespace Proto2
                 _UI2.UpdateSeedAmount(_PS.seeds);
             }    
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                other.GetComponent<Enemy>().TakeDamage(damage);
-                Debug.Log("Enemy Hit");
-            }
-        }
-
+        
         /*
         private void OnTriggerStay(Collider other)
         {
