@@ -11,7 +11,7 @@ public class GameBehaviour : JMC
     protected static Proto2.UIManager _UI2 { get { return Proto2.UIManager.INSTANCE; } }
     protected static Proto2.PlayerStats _PS { get { return Proto2.PlayerStats.INSTANCE; } }
     protected static Proto2.Player _P { get { return Proto2.Player.INSTANCE; } }
-   
+    protected static Proto2.ShopManager _SH { get { return Proto2.ShopManager.INSTANCE; } }
 }
 
 public class GameBehaviour<T> : GameBehaviour where T : GameBehaviour

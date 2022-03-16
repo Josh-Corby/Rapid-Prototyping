@@ -10,7 +10,6 @@ namespace Proto2
         public AttackZone attackzone;
         private Animator animator;
         private CharacterController controller;
-        public GameObject treePrefab;
 
         public int damage;
         private void Start()
@@ -28,24 +27,13 @@ namespace Proto2
             {
                 attackzone.Attack();
                 PerformAttack();
-            }           
-            /*
-            if (Input.GetKeyDown(KeyCode.W))
-                PerformRun();
-            if (Input.GetKey(KeyCode.A))
-                PerformRun();
-            if (Input.GetKey(KeyCode.S))
-                PerformRun();
-            if (Input.GetKey(KeyCode.D))
-                PerformRun();   
-                */
-            if (Input.GetKeyDown(KeyCode.B))
+            }    
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 BuildTree();
             }
         }
-
-
 
         public void PerformAttack()
         {
@@ -57,7 +45,7 @@ namespace Proto2
             if (_PS.seeds >= 10)
             {
                 Vector3 pos = transform.position;
-                Instantiate(treePrefab, pos, player.transform.rotation);
+                Instantiate(_SH.treeToBuild, pos, player.transform.rotation);
                 _PS.seeds -= 10;
                 _UI2.UpdateSeedAmount(_PS.seeds);
             }    

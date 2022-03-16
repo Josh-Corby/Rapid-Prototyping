@@ -13,6 +13,7 @@ namespace Proto2
         [Header("Attributes")]
         public float range;
         public float fireRate = 1f;
+        public int cost;
         private float fireCountdown = 0f;
 
         private void Start()
