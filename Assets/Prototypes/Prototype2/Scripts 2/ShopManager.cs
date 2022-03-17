@@ -13,6 +13,10 @@ namespace Proto2
         public GameObject[] defenseTrees;
         public GameObject treeToBuild;
 
+        private void Start()
+        {
+            treeToBuild = null;
+        }
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))

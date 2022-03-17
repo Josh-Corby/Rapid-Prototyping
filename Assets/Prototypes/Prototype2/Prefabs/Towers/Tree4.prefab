@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 449220059640443539}
   - component: {fileID: 449220059641784669}
   - component: {fileID: 449220059642827053}
-  - component: {fileID: 449220059640789547}
   - component: {fileID: 5442134561891207323}
   m_Layer: 0
   m_Name: Tree4
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449220059640724659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2669644, y: -0.19999889, z: 10.171851}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4509355572882290757}
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &449220059640789547
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449220059640724659}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0901597, y: 1.6092831, z: 1.0901594}
-  m_Center: {x: 0.00000032782555, y: 0.80464154, z: -0.00000008940697}
 --- !u!114 &5442134561891207323
 MonoBehaviour:
   m_ObjectHideFlags: 0

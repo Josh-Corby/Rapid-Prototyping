@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3414725146951245023}
   - component: {fileID: 3406693121683239807}
   - component: {fileID: 4787002080180015485}
-  - component: {fileID: 2727205046221254774}
   m_Layer: 0
   m_Name: Tree5
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3392682468975173605}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.62426, y: -0.20000051, z: -16.129652}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 6777607973586409931}
@@ -102,19 +101,6 @@ MonoBehaviour:
   range: 40
   fireRate: 0.5
   cost: 10
---- !u!65 &2727205046221254774
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3392682468975173605}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 16, y: 27.000002, z: 10.000001}
-  m_Center: {x: 3.5000005, y: 13.500001, z: 2}
 --- !u!1 &3494720607450043516
 GameObject:
   m_ObjectHideFlags: 0

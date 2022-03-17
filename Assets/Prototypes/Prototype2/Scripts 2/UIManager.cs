@@ -10,9 +10,25 @@ namespace Proto2
     {
         public TMP_Text seedsText;
 
+        public TMP_Text waveTimer;
+        public TMP_Text waveCount;
+
+
+        //fuction used to update the wave counter in the ui
+        public void UpdateWaveCount(int _wave)
+        {
+            waveCount.text = "Wave: " + _GM2.waveCount.ToString();
+        }
+
+        //function used to update the timer in the ui
+        public void UpdateTimer(float _time)
+        {
+            waveTimer.text = _GM2.waveTimer.ToString("F2");
+        }
+
         public void UpdateSeedAmount(int _seeds)
         {
-            seedsText.text = _seeds.ToString();
+            seedsText.text = "Seeds: " + _seeds.ToString();
         }
 
     }

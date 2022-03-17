@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Proto2
 {
@@ -9,6 +10,10 @@ namespace Proto2
         public GameObject target;
         public GameObject hitEffect;
 
+        public GameObject HealthBar;
+        public Slider slider;
+
+        private Camera camera;
 
         public float speed;
         public float currentHealth;
@@ -20,12 +25,16 @@ namespace Proto2
 
         private void Start()
         {
+            camera = FindObjectOfType<Camera>();
+            SetMaxHealth(maxHealth);
+
             currentHealth = maxHealth;
             target = GameObject.Find("WayPoint");
         }
 
         private void Update()
         {
+            HealthBar.transform.LookAt(camera.transform.position);
             transform.LookAt(target.transform.position);
             Vector3 dir = target.transform.position - transform.position;
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
@@ -36,16 +45,13 @@ namespace Proto2
             GameObject effectIns = (GameObject)Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
             currentHealth -= _damage;
+            SetHealth(currentHealth);
             if (currentHealth <= 0)
-            Die();
-        }
-
-        void Die()
-        {
+            _SM2.DestroyEnemy(this.gameObject);
             _PS.seeds += 2;
             _UI2.UpdateSeedAmount(_PS.seeds);
-            Destroy(gameObject);
         }
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -53,8 +59,19 @@ namespace Proto2
             {
                 other.GetComponent<MainTree>().TakeDamage(damage);
                 Debug.Log("Tree Hit!");
-                Die();
+                _SM2.DestroyEnemy(this.gameObject);
             }
+        }
+
+        //HealthBar Functions
+        public void SetMaxHealth(float health)
+        {
+            slider.maxValue = health;
+            slider.value = health;
+        }
+        public void SetHealth(float health)
+        {
+            slider.value = health;
         }
     }
 }

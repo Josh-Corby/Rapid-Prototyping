@@ -25,14 +25,11 @@ namespace Proto2
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                attackzone.Attack();
                 PerformAttack();
+                attackzone.Attack();
+                
             }    
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                BuildTree();
-            }
         }
 
         public void PerformAttack()
@@ -40,29 +37,5 @@ namespace Proto2
             animator.SetTrigger("Base_Attack");
         }
 
-        public void BuildTree()
-        {
-            if (_PS.seeds >= 10)
-            {
-                Vector3 pos = transform.position;
-                Instantiate(_SH.treeToBuild, pos, player.transform.rotation);
-                _PS.seeds -= 10;
-                _UI2.UpdateSeedAmount(_PS.seeds);
-            }    
-        }
-        
-        /*
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.CompareTag("BuildZone"))
-            {
-                Debug.Log("Can Build");
-                if (Input.GetKeyDown(KeyCode.B))
-                {
-                    other.GetComponent<BuildZone>().BuildTree();
-                }
-            }
-        }
-        */
     }
 }

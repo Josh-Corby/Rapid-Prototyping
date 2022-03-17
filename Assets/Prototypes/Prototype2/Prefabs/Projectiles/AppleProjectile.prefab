@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 15
+  speed: 30
   damage: 10
 --- !u!1 &2860953916986043974
 GameObject:

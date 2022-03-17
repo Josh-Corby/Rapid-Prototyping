@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4018639054532835419}
   - component: {fileID: 4018639054532835416}
   - component: {fileID: 4018639054532835417}
-  - component: {fileID: 3692828826123207490}
+  - component: {fileID: 638915857681302858}
   m_Layer: 0
   m_Name: BuildZone
-  m_TagString: Untagged
+  m_TagString: BuildZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,9 +29,8 @@ Transform:
   m_GameObject: {fileID: 4018639054532835422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.6878867, y: -0.26, z: -17.52155}
-  m_LocalScale: {x: 4.9119, y: 0.13790075, z: 5.1883}
-  m_Children:
-  - {fileID: 2200734674963939032}
+  m_LocalScale: {x: 5, y: 0.13790075, z: 5}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8e0c8048282e49541ac7463371ee7900, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3692828826123207490
+--- !u!114 &638915857681302858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,35 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a576a18188bc9e48a88448b06d76d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefenseTreePrefab: {fileID: 3129942105554827492, guid: 65f20cbe39bd1c24aa76963375b72799, type: 3}
-  buildPosition: {fileID: 2200734674963939032}
---- !u!1 &7567134519176186101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2200734674963939032}
-  m_Layer: 0
-  m_Name: BuildPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2200734674963939032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7567134519176186101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4018639054532835418}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  buildZone: {fileID: 0}
+  isBuilding: 0
+  StandardColour: {fileID: 2100000, guid: 8e0c8048282e49541ac7463371ee7900, type: 2}
+  HoverColour: {fileID: 2100000, guid: 1b33d995ef42cca4a94e28938b8a6350, type: 2}

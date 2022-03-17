@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4014409008589410028}
   - component: {fileID: 4004404343461143918}
   - component: {fileID: -1077607115222252809}
-  - component: {fileID: 548490266677292262}
   m_Layer: 0
   m_Name: BlueberryTree
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4017416945805256590}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.51941717, y: -0.19999954, z: 34.634827}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 3493158085495726612}
@@ -102,19 +101,6 @@ MonoBehaviour:
   range: 40
   fireRate: 5
   cost: 10
---- !u!65 &548490266677292262
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017416945805256590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 32, y: 27, z: 33.999996}
-  m_Center: {x: -5.500002, y: 13.5, z: -1.4999994}
 --- !u!1 &6673334573834122525
 GameObject:
   m_ObjectHideFlags: 0

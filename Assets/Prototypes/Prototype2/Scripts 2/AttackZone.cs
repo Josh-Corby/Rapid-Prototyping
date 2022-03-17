@@ -26,6 +26,7 @@ namespace Proto2
         }
         public IEnumerator AttackZoneToggle()
         {
+            yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Collider>().enabled = true;
             yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Collider>().enabled = false;
