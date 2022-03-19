@@ -16,7 +16,7 @@ namespace Proto2
             {
                 
                 other.GetComponent<Enemy>().TakeDamage(_P.damage);
-                Debug.Log("Enemy Hit");
+                //Debug.Log("Enemy Hit");
             }
         }
     

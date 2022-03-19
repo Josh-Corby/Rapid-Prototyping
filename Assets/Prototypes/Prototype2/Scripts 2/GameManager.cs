@@ -59,8 +59,6 @@ namespace Proto2
                         waveTimer -= Time.deltaTime;
                         if (waveTimer <= 0)
                         {
-                            //timer is reset
-                            waveTimer = 3;
                             //wavecount is incremented and ui updated
                             IncrementWaveCount();
                             _UI2.UpdateWaveCount(waveCount);
@@ -68,12 +66,14 @@ namespace Proto2
                             StartCoroutine(_SM2.SpawnWithDelay());
                             waveState = WaveState.Spawned;
                         }
-                        else if (waveTimer == 0 && _SM2.enemies.Count == 0)
-                            waveTimer = 3f;
+                        //else if (waveTimer == 0 && _SM2.enemies.Count == 0)
+                        //    waveTimer = 3f;
                     }
                 }
                 else if (waveState == WaveState.Spawned && _SM2.enemies.Count == 0)
             {
+                //timer is reset
+                waveTimer = 3;
                 waveState = WaveState.ReadyToSpawn;
             }
 

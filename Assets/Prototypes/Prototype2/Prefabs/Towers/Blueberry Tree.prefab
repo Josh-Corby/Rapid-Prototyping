@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4014409008589410028}
   - component: {fileID: 4004404343461143918}
   - component: {fileID: -1077607115222252809}
+  - component: {fileID: 3307122450512259068}
   m_Layer: 0
-  m_Name: BlueberryTree
+  m_Name: Blueberry Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +102,20 @@ MonoBehaviour:
   range: 40
   fireRate: 5
   cost: 10
+--- !u!64 &3307122450512259068
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017416945805256590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5400807e802a1de4e9b295c5fa13ec0c, type: 3}
 --- !u!1 &6673334573834122525
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Proto2
 {
@@ -23,8 +24,12 @@ namespace Proto2
         public Transform partToRotate;
         public float turnspeed = 10f;
 
+        //private float tweenTime = 0.05f;
+        //private Tween tween;
+
         private void Start()
         {
+            
             camera = FindObjectOfType<Camera>();
             SetMaxHealth(maxHealth);
 
@@ -44,12 +49,17 @@ namespace Proto2
         {
             GameObject effectIns = (GameObject)Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
+            //StartScaleAnimation();
+
             currentHealth -= _damage;
             SetHealth(currentHealth);
             if (currentHealth <= 0)
-            _SM2.DestroyEnemy(this.gameObject);
-            _PS.seeds += 2;
-            _UI2.UpdateSeedAmount(_PS.seeds);
+            {
+                _SM2.DestroyEnemy(this.gameObject);
+                _PS.seeds += 1;
+                _UI2.UpdateSeedAmount(_PS.seeds);
+            }       
+            
         }
 
 
@@ -73,5 +83,11 @@ namespace Proto2
         {
             slider.value = health;
         }
+
+        //private void StartScaleAnimation()
+        //{
+        //    Vector3 local = transform.localScale;
+        //    tween = gameObject.transform.DOPunchScale(local / 5, tweenTime, 0, 1f).SetAutoKill(false);
+        //}
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Proto2
 {
@@ -16,9 +17,13 @@ namespace Proto2
         public int cost;
         private float fireCountdown = 0f;
 
+        private float tweenTime = 0.4f;
+
         private void Start()
-        {
+        {        
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
+            Vector3 local = transform.localScale;
+            gameObject.transform.DOPunchScale(local/2, tweenTime, 0, 1f);
         }
         private void Update()
         {

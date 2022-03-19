@@ -9,13 +9,14 @@ namespace Proto2
 {
     public class ShopManager : GameBehaviour<ShopManager>
     {
-        public Image[] defenseTreesImages;
+        public Image[] defenseTreesBackground;
         public GameObject[] defenseTrees;
         public GameObject treeToBuild;
 
         private void Start()
         {
             treeToBuild = null;
+            SetBackGroundColour();
         }
         void Update()
         {
@@ -37,6 +38,13 @@ namespace Proto2
             }
         }
 
+        public void SetBackGroundColour()
+        {
+            for (int i = 0; i < defenseTreesBackground.Length; i++)
+            {
+                defenseTreesBackground[i].color = Color.grey;
+            }
+        }
         public void TreeToBuild(int _tree)
         {
             for (int i = 0; i < defenseTrees.Length; i++)
@@ -44,12 +52,12 @@ namespace Proto2
                 if (_tree == i)
                 {
                     treeToBuild = defenseTrees[_tree];
-                    defenseTreesImages[_tree].color = Color.green;
-                    Debug.Log(treeToBuild.name + " Selected");
+                    defenseTreesBackground[_tree].color = Color.green;
+                    _UI2.UpdateSelectedTreeText();
                 }
                 else
                 {
-                    defenseTreesImages[i].color = Color.white;
+                    defenseTreesBackground[i].color = Color.grey;
                 }
             }
         }
