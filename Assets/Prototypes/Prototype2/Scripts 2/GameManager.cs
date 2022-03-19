@@ -34,7 +34,7 @@ namespace Proto2
 
             void Start()
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                
                 Time.timeScale = 1f;
                 //gamestates are set
                 gameState = GameState.Playing;
