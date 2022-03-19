@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f9cc0d8bcb3949a448e6770f404bc04d, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 349e5bca9896ab547a2a5cf7fc25b635, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1768,6 +1768,10 @@ PrefabInstance:
     - target: {fileID: 4499732115359542765, guid: e4b7838f26cdf274d91b8d516d828a06, type: 3}
       propertyPath: m_Name
       value: PauseControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499732115359542765, guid: e4b7838f26cdf274d91b8d516d828a06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4518093575197572039, guid: e4b7838f26cdf274d91b8d516d828a06, type: 3}
       propertyPath: m_UiScaleMode
@@ -3776,7 +3780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &474083821 stripped
 Transform:
@@ -4227,7 +4231,7 @@ GameObject:
   - component: {fileID: 584253071}
   - component: {fileID: 584253070}
   m_Layer: 5
-  m_Name: DefenseTree2
+  m_Name: BlueberryTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4272,8 +4276,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 539c09bd01e0efe4fa171253e1bfb488, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4571,8 +4575,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ab7bf21abb5fd96468d6ea173cf62392, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5045,7 +5049,7 @@ GameObject:
   - component: {fileID: 680530060}
   - component: {fileID: 680530059}
   m_Layer: 5
-  m_Name: DefenseTree3
+  m_Name: LemonTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5090,8 +5094,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 7c081e95b94a59a4bb55b2e8eed53c89, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6314,12 +6318,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897015407}
-  m_LocalRotation: {x: 0.10643526, y: -0.0035420626, z: 0.00037915647, w: 0.9943133}
+  m_LocalRotation: {x: 0.10643526, y: -0.0035413643, z: 0.0003790815, w: 0.9943133}
   m_LocalPosition: {x: -0.824152, y: 5.071975, z: -28.677273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897015411
 MonoBehaviour:
@@ -7844,7 +7848,7 @@ GameObject:
   - component: {fileID: 1103840009}
   - component: {fileID: 1103840008}
   m_Layer: 5
-  m_Name: DefenseTree1
+  m_Name: AppleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7889,8 +7893,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 606b18c0c60f82742a7eff60c65de767, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10934,7 +10938,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576651000}
-  m_LocalRotation: {x: 0.10643525, y: -0.0035420626, z: 0.0003791565, w: 0.99431324}
+  m_LocalRotation: {x: 0.106435254, y: -0.0035413643, z: 0.00037908176, w: 0.9943133}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13323,7 +13327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889758987}
-  m_LocalRotation: {x: 0.07791392, y: -0.000000019178836, z: 0.0000000014988548, w: 0.9969601}
+  m_LocalRotation: {x: 0.07791392, y: 0.000000019178836, z: -0.0000000014988548, w: 0.9969601}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15214,7 +15218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &2121639034 stripped
 Transform:
