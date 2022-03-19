@@ -29,8 +29,8 @@ namespace Proto2
             //values used in wave spawner function
             public float waveTimer = 3f;
             public int enemyAmount = 8;
-            public int waveCount = 0;
-            public int totalEnemies;
+            public float waveCount;
+            public float totalEnemies;
 
             void Start()
             {

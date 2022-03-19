@@ -5003,10 +5003,10 @@ MonoBehaviour:
   speed: 2
   currentSpeed: 0
   currentHealth: 0
-  maxHealth: 40
-  health: 30
+  maxHealth: 100
+  health: 60
   damage: 10
-  healthMultiplier: 1.1
+  healthMultiplier: 1.05
   speedMultiplier: 1.1
   partToRotate: {fileID: 5950065841484814599}
   turnspeed: 10
@@ -10347,7 +10347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae1976ed11011e42b3e285c791267c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 6526684521836880866}
 --- !u!1 &6100869737576078151
 GameObject:
   m_ObjectHideFlags: 0

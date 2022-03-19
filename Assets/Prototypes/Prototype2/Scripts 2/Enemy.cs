@@ -35,7 +35,7 @@ namespace Proto2
         private void Start()
         {
 
-            maxHealth = health * (_GM2.waveCount * healthMultiplier);
+            maxHealth = health * (_GM2.waveCount /2 * healthMultiplier);
             currentHealth = maxHealth;
             currentSpeed = speed + (_GM2.waveCount * speedMultiplier);
 
