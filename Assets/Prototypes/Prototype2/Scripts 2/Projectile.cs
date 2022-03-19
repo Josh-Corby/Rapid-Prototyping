@@ -11,6 +11,8 @@ namespace Proto2
         public float speed;
         public int damage;
 
+
+
         private void Update()
         {
             if (target == null)
@@ -30,6 +32,7 @@ namespace Proto2
 
             transform.Translate(dir.normalized * distanceThisFame, Space.World);
         }
+
 
         void Damage (Transform enemy)
         {

@@ -17,9 +17,14 @@ namespace Proto2
         private Camera camera;
 
         public float speed;
+        public float currentSpeed;
         public float currentHealth;
-        public float maxHealth = 10;
+        public float maxHealth;
+        public float health;
         public int damage;
+
+        public float healthMultiplier;
+        public float speedMultiplier;
 
         public Transform partToRotate;
         public float turnspeed = 10f;
@@ -29,11 +34,14 @@ namespace Proto2
 
         private void Start()
         {
-            
+
+            maxHealth = health * (_GM2.waveCount * healthMultiplier);
+            currentHealth = maxHealth;
+            currentSpeed = speed + (_GM2.waveCount * speedMultiplier);
+
             camera = FindObjectOfType<Camera>();
             SetMaxHealth(maxHealth);
 
-            currentHealth = maxHealth;
             target = GameObject.Find("WayPoint");
         }
 
@@ -42,7 +50,7 @@ namespace Proto2
             HealthBar.transform.LookAt(camera.transform.position);
             transform.LookAt(target.transform.position);
             Vector3 dir = target.transform.position - transform.position;
-            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+            transform.Translate(dir.normalized * currentSpeed * Time.deltaTime, Space.World);
         }
 
         public void TakeDamage(int _damage)
@@ -56,7 +64,7 @@ namespace Proto2
             if (currentHealth <= 0)
             {
                 _SM2.DestroyEnemy(this.gameObject);
-                _PS.seeds += 1;
+                _PS.seeds += 4;
                 _UI2.UpdateSeedAmount(_PS.seeds);
             }       
             

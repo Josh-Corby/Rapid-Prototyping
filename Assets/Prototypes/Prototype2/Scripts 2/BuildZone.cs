@@ -30,14 +30,14 @@ namespace Proto2
         public void BuildTree()
         {
 
-            if (_PS.seeds >= 20)
+            if (_PS.seeds >= 10)
             {
                 if (_SH.treeToBuild == null)
                     return;
 
                 Instantiate(_SH.treeToBuild, gameObject.transform.position, gameObject.transform.rotation);
 
-                _PS.seeds -= 20;
+                _PS.seeds -= 10;
                 _UI2.UpdateSeedAmount(_PS.seeds);
                 renderer.material = StandardColour;
                 gameObject.GetComponent<Collider>().enabled = false;

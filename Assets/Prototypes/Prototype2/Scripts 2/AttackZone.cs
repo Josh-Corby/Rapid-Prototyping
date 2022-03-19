@@ -28,7 +28,7 @@ namespace Proto2
         {
             yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Collider>().enabled = true;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             gameObject.GetComponent<Collider>().enabled = false;
         }
     }

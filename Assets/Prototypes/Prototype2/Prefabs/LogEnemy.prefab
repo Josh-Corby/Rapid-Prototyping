@@ -5000,11 +5000,14 @@ MonoBehaviour:
   hitEffect: {fileID: 2356846386370303098, guid: 193c5378e3055c74ba4308fc04441dcf, type: 3}
   HealthBar: {fileID: 5805813303378615953}
   slider: {fileID: 6526684521836880866}
-  camera: {fileID: 0}
-  speed: 4
+  speed: 2
+  currentSpeed: 0
   currentHealth: 0
-  maxHealth: 20
+  maxHealth: 40
+  health: 30
   damage: 10
+  healthMultiplier: 1.1
+  speedMultiplier: 1.1
   partToRotate: {fileID: 5950065841484814599}
   turnspeed: 10
 --- !u!65 &4539001595531883696

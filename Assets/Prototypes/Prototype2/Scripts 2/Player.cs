@@ -26,8 +26,7 @@ namespace Proto2
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PerformAttack();
-                attackzone.Attack();
-                
+                attackzone.Attack();           
             }    
 
         }

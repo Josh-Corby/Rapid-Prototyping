@@ -19,6 +19,8 @@ namespace Proto2
 
         private float tweenTime = 0.4f;
 
+        public AudioSource audio;
+
         private void Start()
         {        
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -43,7 +45,7 @@ namespace Proto2
         {
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Projectile bullet = bulletGO.GetComponent<Projectile>();
-
+            audio.Play();
             if (bullet != null)
                 bullet.Seek(target);
         }

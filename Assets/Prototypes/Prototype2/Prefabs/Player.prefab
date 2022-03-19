@@ -801,7 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5710009511932697851}
   attackzone: {fileID: 1524501481}
-  damage: 5
+  damage: 10
 --- !u!114 &499790193
 MonoBehaviour:
   m_ObjectHideFlags: 0
