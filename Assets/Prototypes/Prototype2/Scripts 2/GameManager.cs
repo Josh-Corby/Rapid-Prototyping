@@ -71,12 +71,16 @@ namespace Proto2
                     }
                 }
                 else if (waveState == WaveState.Spawned && _SM2.enemies.Count == 0)
-            {
+                {
                 //timer is reset
                 waveTimer = 3;
                 waveState = WaveState.ReadyToSpawn;
-            }
+                }
 
+                if(waveCount == 21)
+            {
+                EndGame();
+            }
             }
 
             /*
@@ -88,6 +92,10 @@ namespace Proto2
                 totalEnemies = (enemyAmount + (waveCount * 2));
             }
 
+            public void EndGame()
+            {
+            _UI2.ToggleVictoryCanvas();
+            }
 
         }
     

@@ -37,7 +37,7 @@ namespace Proto2
 
             maxHealth = health * (_GM2.waveCount /2 * healthMultiplier);
             currentHealth = maxHealth;
-            currentSpeed = speed + (_GM2.waveCount * speedMultiplier);
+            currentSpeed = speed + (_GM2.waveCount /2 * speedMultiplier);
 
             camera = FindObjectOfType<Camera>();
             SetMaxHealth(maxHealth);

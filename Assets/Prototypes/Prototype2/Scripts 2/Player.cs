@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace Proto2
 {
     public class Player : GameBehaviour<Player>
@@ -27,8 +26,7 @@ namespace Proto2
             {
                 PerformAttack();
                 attackzone.Attack();           
-            }    
-
+            }   
         }
 
         public void PerformAttack()

@@ -13,10 +13,18 @@ namespace Proto2
         public TMP_Text waveTimer;
         public TMP_Text waveCount;
         public TMP_Text treeSelectedText;
+        public TMP_Text wavesSurvivedText;
+
+        public Canvas gameOverCanvas;
+        public Canvas victoryCanvas;
+        public TMP_Text notEnoughSeeds;
 
         private void Start()
         {
+            notEnoughSeeds.enabled = false;
             treeSelectedText.text = "";
+            gameOverCanvas.enabled = false;
+            victoryCanvas.enabled = false;
         }
 
         //fuction used to update the wave counter in the ui
@@ -38,10 +46,27 @@ namespace Proto2
 
         public void UpdateSelectedTreeText()
         {
-            
             treeSelectedText.text = _SH.treeToBuild.name;
             treeSelectedText.DOFade(255f, 1f);
             treeSelectedText.DOFade(0f, 1.5f);
+        }
+        
+        public void WavesSurvivedCount()
+        {
+            wavesSurvivedText.text = _GM2.waveCount.ToString();
+        }
+
+        public void ToggleGameOverCanvas()
+        {
+            Time.timeScale = 0f;
+            gameOverCanvas.enabled = true;
+            wavesSurvivedText.text = "Waves survived: " + (_GM2.waveCount - 1).ToString();
+        }
+
+        public void ToggleVictoryCanvas()
+        {
+            Time.timeScale = 0f;
+            victoryCanvas.enabled = true;
         }
     }
 }

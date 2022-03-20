@@ -29,6 +29,7 @@ namespace Proto2
         void Die()
         {
             Destroy(gameObject);
+            _UI2.ToggleGameOverCanvas();
         }
     }
 }
