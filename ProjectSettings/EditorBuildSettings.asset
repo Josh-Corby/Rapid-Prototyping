@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototypes/Prototype2/Scenes 2/Prototype 2.unity
     guid: 276348e948630da48bba7b60db380a8d
+  - enabled: 1
+    path: Assets/Prototypes/Prototype3/Scenes 3/Level 1.unity
+    guid: cd001b4689c07f54989c249345eb912f
+  - enabled: 1
+    path: Assets/Prototypes/Prototype3/Scenes 3/Level 2.unity
+    guid: b68dd530de372e1459850800af8dfea1
+  - enabled: 1
+    path: Assets/Prototypes/Prototype3/Scenes 3/Level 3.unity
+    guid: 7cf9c714dd3b064458b87952461f86f8
+  - enabled: 1
+    path: Assets/Prototypes/Prototype3/Scenes 3/Level 4.unity
+    guid: e56e967e98ab114439cf6b947cfd2019
   m_configObjects: {}
