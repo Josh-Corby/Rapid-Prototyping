@@ -1151,7 +1151,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press R to start/stop rotating a platform while standing on it
+  m_text: 'Rotate your character with the A and D keys and move foward/back with
+    W and S
+
+    Press the Q and E keys to rotate a platform while standing on it
 
 '
   m_isRightToLeft: 0
