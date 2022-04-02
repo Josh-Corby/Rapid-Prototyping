@@ -5,18 +5,19 @@ using DG.Tweening;
 
 namespace Proto3
 {
-
     public class Key : MonoBehaviour
     {
         public GameObject bridge;
         public Vector3 finalRotation;
-        private void OnTriggerEnter(Collider other)
+
+        private void OnCollisionEnter(Collision collision)
         {
-            if (other.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player"))
             {
                 Destroy(gameObject);
                 bridge.transform.DORotate(finalRotation, 1);
             }
         }
+
     }
 }

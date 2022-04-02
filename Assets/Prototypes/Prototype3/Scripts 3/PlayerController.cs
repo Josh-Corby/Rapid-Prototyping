@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Proto3
 {
 
-    public class RotationController : GameBehaviour
+    public class PlayerController : GameBehaviour
     {
         private CharacterController controller;
         private GameObject player;
@@ -20,9 +20,9 @@ namespace Proto3
         public float groundDistance = 0.4f;
         public LayerMask groundMask;
 
-        private bool isGrounded;
+        public bool isGrounded;
 
-
+        public AudioSource audioSource;
 
 
         void Start()
@@ -49,10 +49,16 @@ namespace Proto3
             if(isGrounded == true)
             {
                controller.Move(movement * moveSpeed * Time.deltaTime);
-            }
-           
-            
+            }    
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Pickup"))
+            {
+                Debug.Log("Pickup");
+                audioSource.Play();
+            }
+        }
     }
 }

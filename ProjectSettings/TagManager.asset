@@ -10,6 +10,7 @@ TagManager:
   - Music
   - MainTree
   - BuildZone
+  - Pickup
   layers:
   - Default
   - TransparentFX
