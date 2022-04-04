@@ -11,7 +11,6 @@ namespace Proto3
         {
             if (other.CompareTag("Player"))
             {
-                AudioSource.Play();
                 _UI3.ToggleVictoryCanvas();
             }
         }
