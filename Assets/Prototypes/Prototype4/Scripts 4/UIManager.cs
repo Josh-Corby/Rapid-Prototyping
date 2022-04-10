@@ -13,12 +13,14 @@ namespace Proto4
         public Canvas gameCanvas;
         public Canvas menuCanvas;
         public Canvas gameOverCanvas;
+        public Canvas victoryCanvas;
 
         private void Start()
         {
             gameCanvas.enabled = false;
             gameOverCanvas.enabled = false;
             menuCanvas.enabled = true;
+            victoryCanvas.enabled = false;
         }
 
         private void Update()
@@ -39,7 +41,12 @@ namespace Proto4
         public void GameOver()
         {
             gameOverCanvas.enabled = true;
-            menuCanvas.enabled = false;
+            gameCanvas.enabled = false;
+        }
+
+        public void Victory()
+        {
+            victoryCanvas.enabled = true;
             gameCanvas.enabled = false;
         }
     }

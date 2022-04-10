@@ -16,7 +16,6 @@ namespace Proto4
 
         void Start()
         {
-            timer = 60f;
             Time.timeScale = 0f;  
         }
 
@@ -28,6 +27,17 @@ namespace Proto4
                 Time.timeScale = 0f;
                 _UI4.GameOver();
             }
+
+            if(timer <=0)
+            {
+                Time.timeScale = 0f;
+                _UI4.Victory();
+            }
+        }
+        public void StartTimer()
+        {
+            timer = 60f;
+            Time.timeScale = 1f;
         }
         public void GetAlgorithms(string _type)
         {
