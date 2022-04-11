@@ -12,6 +12,7 @@ namespace Proto4
         public GameObject[] algorithms;
         public float spawnDelay;
         public float timer;
+        public float speed;
 
 
         void Start()
@@ -27,17 +28,22 @@ namespace Proto4
                 Time.timeScale = 0f;
                 _UI4.GameOver();
             }
-
+                
             if(timer <=0)
             {
                 Time.timeScale = 0f;
                 _UI4.Victory();
             }
         }
-        public void StartTimer()
+
+        public void ChangeDifficulty(string _diff)
         {
-            timer = 60f;
-            Time.timeScale = 1f;
+            if (_diff == "easy")
+                speed = 30;
+            else if (_diff == "medium")
+                speed = 40;
+            else if (_diff == "hard")
+                speed = 50;
         }
         public void GetAlgorithms(string _type)
         {
@@ -48,7 +54,12 @@ namespace Proto4
             else if(_type == "subtraction")
             {
                 algorithms = subtractionAlgorithms;
-            }
+            }       
+        }
+
+        public void StartGame()
+        {
+            timer = 60f;
             Time.timeScale = 1f;
             _UI4.StartGame();
             StartCoroutine(SpawnWithDelay());
@@ -66,8 +77,6 @@ namespace Proto4
                 enemy.transform.SetParent(spawnPoints[rndSpawn], true);
                 yield return new WaitForSeconds(spawnDelay);
             }
-            
-            //StartCoroutine(SpawnWithDelay());
         }
     }
 }

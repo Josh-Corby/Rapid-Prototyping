@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 namespace Proto4
 {
@@ -8,7 +9,7 @@ namespace Proto4
     {
         public Algorithm algorithm;
         public TMP_Text algorithmText;
- 
+
         void Start()
         {
             algorithmText.text = algorithm.algorithm;

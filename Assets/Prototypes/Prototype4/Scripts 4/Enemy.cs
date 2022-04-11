@@ -8,12 +8,12 @@ namespace Proto4
     {
         private GameObject player;
         public Algorithm algorithm;
-        [SerializeField]
-        private float speed = 1.5f;
+        private float speed;
 
         private void Start()
         {
             player = GameObject.Find("Player");
+            speed = _GM4.speed;
         }
         // Update is called once per frame
         void Update()

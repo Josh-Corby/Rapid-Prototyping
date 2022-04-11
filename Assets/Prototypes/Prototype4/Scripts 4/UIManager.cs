@@ -10,17 +10,19 @@ namespace Proto4
     {
         public TMP_Text playerHP;
         public TMP_Text timerText;
-        public Canvas gameCanvas;
-        public Canvas menuCanvas;
-        public Canvas gameOverCanvas;
-        public Canvas victoryCanvas;
+        public GameObject gamePanel;
+        public GameObject algorithmPanel;
+        public GameObject gameOverPanel;
+        public GameObject victoryPanel;
+        public GameObject difficultyPanel; 
 
         private void Start()
         {
-            gameCanvas.enabled = false;
-            gameOverCanvas.enabled = false;
-            menuCanvas.enabled = true;
-            victoryCanvas.enabled = false;
+            gamePanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+            algorithmPanel.SetActive(true);
+            victoryPanel.SetActive(false);
+            difficultyPanel.SetActive(false);
         }
 
         private void Update()
@@ -32,22 +34,27 @@ namespace Proto4
             playerHP.text = _P4.health.ToString();
         }
 
+        public void ChooseDifficulty()
+        {
+            algorithmPanel.SetActive(false);
+            difficultyPanel.SetActive(true);
+        }
         public void StartGame()
         {
-            menuCanvas.enabled = false;
-            gameCanvas.enabled = true;
+            difficultyPanel.SetActive(false);
+            gamePanel.SetActive(true);
         }
 
         public void GameOver()
         {
-            gameOverCanvas.enabled = true;
-            gameCanvas.enabled = false;
+            gameOverPanel.SetActive(true);
+            gamePanel.SetActive(false);
         }
 
         public void Victory()
         {
-            victoryCanvas.enabled = true;
-            gameCanvas.enabled = false;
+            victoryPanel.SetActive(true);
+            gamePanel.SetActive(false);
         }
     }
 }

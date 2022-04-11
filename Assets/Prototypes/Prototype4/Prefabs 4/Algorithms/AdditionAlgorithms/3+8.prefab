@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -522, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3199358573505569390
 CanvasRenderer:
@@ -62,7 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   algorithm: {fileID: 11400000, guid: 398d0a328e76b70428d6c378f4f2939b, type: 2}
-  speed: 25
 --- !u!61 &8995005470647989205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   algorithm: {fileID: 11400000, guid: 398d0a328e76b70428d6c378f4f2939b, type: 2}
   algorithmText: {fileID: 6172416084233385445}
+  enemyImage: {fileID: 0}
 --- !u!114 &6172416084233385445
 MonoBehaviour:
   m_ObjectHideFlags: 0

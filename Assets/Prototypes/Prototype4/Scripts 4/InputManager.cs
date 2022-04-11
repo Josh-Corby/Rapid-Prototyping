@@ -13,5 +13,6 @@ namespace Proto4
         {
             input = s;
         }
+
     }
 }
