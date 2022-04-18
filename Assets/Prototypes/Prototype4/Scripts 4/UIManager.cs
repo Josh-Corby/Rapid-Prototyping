@@ -27,7 +27,7 @@ namespace Proto4
 
         private void Update()
         {
-            timerText.text = "Time left: " + _GM4.timer.ToString("F3");
+            timerText.text = "Time : " + _GM4.timer.ToString("F3");
         }
         public void UpdatePlayerHPText()
         {

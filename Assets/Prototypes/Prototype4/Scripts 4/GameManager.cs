@@ -22,14 +22,14 @@ namespace Proto4
 
         private void Update()
         {
-            timer -= Time.deltaTime;
+            timer += Time.deltaTime;
             if (_P4.health <= 0)
             {
                 Time.timeScale = 0f;
                 _UI4.GameOver();
             }
                 
-            if(timer <=0)
+            if(timer >=60)
             {
                 Time.timeScale = 0f;
                 _UI4.Victory();
@@ -59,14 +59,14 @@ namespace Proto4
 
         public void StartGame()
         {
-            timer = 60f;
+            timer = 0f;
             Time.timeScale = 1f;
             _UI4.StartGame();
             StartCoroutine(SpawnWithDelay());
+            StartCoroutine(IncreaseSpeed());
         }
         public IEnumerator SpawnWithDelay()
         {
-            while(timer >0)
             {
                 //Get a random enemy to spawn
                 int rndAlgoritm = Random.Range(0, algorithms.Length);
@@ -76,7 +76,15 @@ namespace Proto4
                 GameObject enemy = Instantiate(algorithms[rndAlgoritm], spawnPoints[rndSpawn].position, spawnPoints[rndSpawn].rotation);
                 enemy.transform.SetParent(spawnPoints[rndSpawn], true);
                 yield return new WaitForSeconds(spawnDelay);
+                StartCoroutine(SpawnWithDelay());
             }
+        }
+
+        public IEnumerator IncreaseSpeed()
+        {
+            yield return new WaitForSeconds(10);
+            speed *= 1.2f;
+            StartCoroutine(SpawnWithDelay());
         }
     }
 }
