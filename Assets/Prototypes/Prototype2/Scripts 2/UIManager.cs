@@ -30,7 +30,7 @@ namespace Proto2
         //fuction used to update the wave counter in the ui
         public void UpdateWaveCount(float _wave)
         {
-            waveCount.text = "Wave: " + _GM2.waveCount.ToString() + " / 20";
+            waveCount.text = "Wave: " + _GM2.waveCount.ToString() + " / 10";
         }
 
         //function used to update the timer in the ui

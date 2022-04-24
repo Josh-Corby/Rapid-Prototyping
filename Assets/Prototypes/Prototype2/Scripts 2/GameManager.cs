@@ -77,7 +77,7 @@ namespace Proto2
                 waveState = WaveState.ReadyToSpawn;
                 }
 
-                if(waveCount == 21)
+                if(waveCount == 11)
             {
                 EndGame();
             }
