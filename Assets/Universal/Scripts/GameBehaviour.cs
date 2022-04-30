@@ -22,6 +22,8 @@ public class GameBehaviour : JMC
     protected static Proto4.GameManager _GM4 { get { return Proto4.GameManager.INSTANCE; } }
     protected static Proto4.Player _P4 { get { return Proto4.Player.INSTANCE; } }
     protected static Proto4.InputManager _IM { get { return Proto4.InputManager.INSTANCE; } }
+
+    protected static Proto5.UIManager _UI5 { get { return Proto5.UIManager.INSTANCE; } }
 }
 
 public class GameBehaviour<T> : GameBehaviour where T : GameBehaviour
