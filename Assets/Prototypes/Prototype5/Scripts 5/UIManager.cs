@@ -20,12 +20,12 @@ namespace Proto5
         }
 
 
-        void ShowGameWinUI()
+        public void ShowGameWinUI()
         {
             OnGameOver(gameWinUI);
         }
 
-        void ShowGameLoseUI()
+        public void ShowGameLoseUI()
         {
             OnGameOver(gameLoseUI);
         }

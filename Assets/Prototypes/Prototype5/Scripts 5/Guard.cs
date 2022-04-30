@@ -13,7 +13,7 @@ namespace Proto5
         //public float speed = 5f;
         //public float waitTime = .3f;
         //public float turnSpeed = 90;
-        float timeToSpotPlayer = 3f;
+        float timeToSpotPlayer = 1f;
 
         public Light spotlight;
         public float viewDistance;
