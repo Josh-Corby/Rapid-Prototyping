@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace proto5
+namespace Proto5
 {
 
     public class FinishLine : GameBehaviour
