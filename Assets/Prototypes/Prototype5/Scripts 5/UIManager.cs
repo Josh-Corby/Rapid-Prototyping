@@ -29,6 +29,7 @@ namespace Proto5
 
         public void InteractionTextToggle(bool toggle)
         {
+            
             if (toggle == true)
             {
                 InteractionPanel.SetActive(true);

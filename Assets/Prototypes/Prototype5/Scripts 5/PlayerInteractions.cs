@@ -31,6 +31,7 @@ public class PlayerInteractions : GameBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            
             interaction = other.gameObject;
             canInteract = true;
             _UI5.KillEnemyUI();
